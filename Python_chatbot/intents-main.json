@@ -1,0 +1,61 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "Is anyone there?", "Hello", "Good day", "Whats up"],
+     "responses": ["Hello! Are you a partner, student, customer or other", "Hi there, how can I help you? Are you a partner, student, customer or other"]
+    },
+    {"tag": "good bye",
+     "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
+     "responses": ["Sad to see you go :(", "Goodbye!"]
+
+    },
+    {"tag": "customer",
+        "patterns":["I am a customer", "customer"],
+        "responses":["Thank you for being a customer, how can I help you today?"],
+        "recommendations":["Customer"]
+    },
+    {"tag": "student",
+        "patterns":["I am a student", "student", "I want to learn about Ilantus"],
+        "responses":["Amazing!, how can I help you today?"],
+        "recommendations":["Student"]
+    },
+    {"tag": "potential partner",
+        "patterns":["I am a potential partner", "I want to be a partner"],
+        "responses":["Thank you for your interest, how can I help you today?"],
+        "recommendations":["Potential Partner"]
+    },
+    {"tag": "partner",
+        "patterns":["I am a partner", "partner", "I am a partner at Ilantus"],
+        "responses":["Thank you for being a partner, how can I help you today?"],
+        "recommendations":["Partner"]
+    },
+    {"tag": "other",
+        "patterns":["I am other", "not applicable", "I don't want to say"],
+        "responses":["Welcome, how can I help you today?"],
+        "recommendations":[""]
+    },
+    {"tag": "contact sale",
+        "patterns":["I would like to contact sales", "I want to contact sales", "I want to talk to sales"],
+        "responses":["Of course! Would you like to talk to sales now or schedule a meeting?"],
+        "recommendations":["Contact sales"]
+    },
+    {
+        "tag": "Help",
+        "patterns":["I need help", "Can you help me?"],
+        "responses":["Yes of course! How can I help you?"],
+        "recommendation":["Help me"]
+    },
+    {
+        "tag": "schedule meeting",
+        "patterns": ["I want to schedule meeting", "Can you book a meeting"],
+        "responses":["Perfect, please fill out the following form and I will send you the link on your email"],
+        "recommendations":[]
+    },
+    {
+        "tag": "demo",
+        "patterns": ["I want a demo", "How can I get a demo", "where can I get a demo","can I get a demo of the software"],
+        "responses":["A demo is a great way to learn more! Please fill out the form https://www.ilantus.com/book-a-demo/ to book a demo."],
+        "recommendations":[]
+    }
+    
+]
+}
