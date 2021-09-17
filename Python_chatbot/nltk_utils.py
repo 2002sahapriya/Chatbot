@@ -1,19 +1,17 @@
-import numpy as np
 import nltk
-# nltk.download('punkt')
-from nltk.stem.porter import PorterStemmer
 
-stemmer = PorterStemmer()
+from nltk.stem.porter import PorterStemmer
+import numpy as np
 
 """
     split sentence into array of words/tokens
     a token can be a word or punctuation character, or number
 """
 
+stemmer = PorterStemmer()
 
 def tokenize(sentence):
-    return nltk.word_tokenize(sentence)
-
+    return nltk.word_tokenize(sentence) 
 
 """
     stemming = find the root form of the word
@@ -23,10 +21,8 @@ def tokenize(sentence):
     -> ["organ", "organ", "organ"]
 """
 
-
 def stem(word):
     return stemmer.stem(word.lower())
-
 
 """
     return bag of words array:
@@ -37,13 +33,14 @@ def stem(word):
     bog   = [  0 ,    1 ,    0 ,   1 ,    0 ,    0 ,      0]
 """
 
+def bag_of_words(tokenized_sentence, all_words):
+    tokenized_sentence = [stem(w) for w in tokenized_sentence]
 
-def bag_of_words(tokenized_sentence, words):
-    # stem each word
-    sentence_words = [stem(word) for word in tokenized_sentence]
-    # initialize bag with 0 for each word
-    bag = np.zeros(len(words), dtype=np.float32)
-    for idx, w in enumerate(words):
-        if w in sentence_words:
-            bag[idx] = 1
+    bag = np.zeros(len(all_words), dtype=np.float32)
+    for idx, w in enumerate(all_words):
+        if w in tokenized_sentence:
+            bag[idx] = 1.0
+
     return bag
+
+

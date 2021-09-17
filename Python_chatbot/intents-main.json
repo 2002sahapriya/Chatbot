@@ -1,61 +1,199 @@
-{"intents": [
-    {"tag": "greeting",
-     "patterns": ["Hi", "Is anyone there?", "Hello", "Good day", "Whats up"],
-     "responses": ["Hello! Are you a partner, student, customer or other", "Hi there, how can I help you? Are you a partner, student, customer or other"]
-    },
-    {"tag": "good bye",
-     "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
-     "responses": ["Sad to see you go :(", "Goodbye!"]
-
-    },
-    {"tag": "customer",
-        "patterns":["I am a customer", "customer"],
-        "responses":["Thank you for being a customer, how can I help you today?"],
-        "recommendations":["Customer"]
-    },
-    {"tag": "student",
-        "patterns":["I am a student", "student", "I want to learn about Ilantus"],
-        "responses":["Amazing!, how can I help you today?"],
-        "recommendations":["Student"]
-    },
-    {"tag": "potential partner",
-        "patterns":["I am a potential partner", "I want to be a partner"],
-        "responses":["Thank you for your interest, how can I help you today?"],
-        "recommendations":["Potential Partner"]
-    },
-    {"tag": "partner",
-        "patterns":["I am a partner", "partner", "I am a partner at Ilantus"],
-        "responses":["Thank you for being a partner, how can I help you today?"],
-        "recommendations":["Partner"]
-    },
-    {"tag": "other",
-        "patterns":["I am other", "not applicable", "I don't want to say"],
-        "responses":["Welcome, how can I help you today?"],
-        "recommendations":[""]
-    },
-    {"tag": "contact sale",
-        "patterns":["I would like to contact sales", "I want to contact sales", "I want to talk to sales"],
-        "responses":["Of course! Would you like to talk to sales now or schedule a meeting?"],
-        "recommendations":["Contact sales"]
-    },
-    {
-        "tag": "Help",
-        "patterns":["I need help", "Can you help me?"],
-        "responses":["Yes of course! How can I help you?"],
-        "recommendation":["Help me"]
-    },
-    {
-        "tag": "schedule meeting",
-        "patterns": ["I want to schedule meeting", "Can you book a meeting"],
-        "responses":["Perfect, please fill out the following form and I will send you the link on your email"],
-        "recommendations":[]
-    },
-    {
-        "tag": "demo",
-        "patterns": ["I want a demo", "How can I get a demo", "where can I get a demo","can I get a demo of the software"],
-        "responses":["A demo is a great way to learn more! Please fill out the form https://www.ilantus.com/book-a-demo/ to book a demo."],
-        "recommendations":[]
-    }
-    
-]
+{ 
+    "intents": [
+        {
+            "tag": "Greeting",
+            "patterns": ["hi", "hey", "hello", "nice to meet you"],
+            "responses":["Before we get started, can you tell me if you are a customer, partner, researcher, looking for Career oppertunities or other?"],
+            "recommendations":["Customer", "Researcher", "Partner", "Other", "Career"]
+        },
+        {
+            "tag": "Customer",
+            "patterns": ["customer", "I am a customer"],
+            "responses":["It's so great to have you here today! How can I help you!"],
+            "recommendations":["Ilantus' products", 
+                "Ilantus' solutions", "Ilantus' services", "Resources offeref by Ilantus", "Talk to sales", 
+                "Schedule a demo", "Try the product", "Other", "Here from the Customers"]
+        },
+        {
+            "tag": "Ilantus' services",
+            "patterns": ["Ilantus' services", "What services does Ilantus provide"],
+            "responses":["Thank you for being interested in Ilantus' Services! We offer a variety of services like As A Service and Identity and Access MAnagement Assessments. Is ther something specific that you are looking for?"],
+            "recommendations":["As a Service", "IAM Assessments"]
+        },
+        {
+            "tag": "Ilantus' products",
+            "patterns": ["Ilantus' products", "products offered", "products", "ilantus products", "products do you offer", "what products are most popular"],
+            "responses":["THank for your interest in our Products! We products in Conpact Identity, XPress Password, Passwordless Authentication and Privileged Access Management. Under Compact Identity, we have Single Sign-on, Universal Directory, Password Management, Web Access Management, User Lifecycle Management, Adaptive Multifactor Authentication, Segragation of Duties, Access Request and Access Recertification. To get an overview, you can visit https://www.ilantus.com/products/compact-identity/# , https://www.ilantus.com/products/xpress-password/# , https://www.ilantus.com/products/passwordless-authentication/ , https://www.ilantus.com/products/privileged-access-management/. Is there a specific topic that you are looking for?"],
+            "recommendations":["No, thank you", "Contact Sales", "Single Sign-on", "Universal Directory", "Password Management", "Web Access Management", "User Lifecycle Management", "Adaptive Multifactor Authentication", "Segragation of Duties", "Access Request", "Access Recertification"]
+        },
+        {
+            "tag": "Ilantus' solutions",
+            "patterns": ["Ilantus' solutions", "solutions"],
+            "responses":["Thank you for your interest in Ilantus' offered aolutions! What industry are you looking a solution for?"],
+            "recommendations":["Banking and Financial Services", "Healthcare", "Education", "Manufacturing", "Telecommunications", "Retail"]
+        },
+        {
+            "tag": "Resources available at Ilantus",
+            "patterns": [],
+            "responses":[],
+            "recommendations":[]
+        },
+        {
+            "tag": "Schedule a demo",
+            "patterns": [],
+            "responses":[],
+            "recommendations":[]
+        },
+        {
+            "tag": "Try the prodoct",
+            "patterns": [],
+            "responses":[],
+            "recommendations":[]
+        },
+        {
+            "tag": "As a Service",
+            "patterns": ["As a Service"],
+            "responses":["Great! We offer multiple As A Service services in authentication, access management, identity governance, identity administration, privileged access management, and identity analytics. To learn more you can check out https://www.ilantus.com/as-a-service/. Is there anything else that I can help you with?"],
+            "recommendations":["I am all set", "Contact sales for more Information"]
+        },
+        {
+            "tag": "IAM Assessments",
+            "patterns": ["IAM Assessments", "Identity and access management assessments", "what assessments do you offer"],
+            "responses":["Awesome! We offer DIY Assessment and Ilantus Expert Assessments where you can either asnswer a few questions to find out about your status for security with Identity and Access Managements or talk to an expert. You can learn more about the Assessments we offer at https://www.ilantus.com/iam-assessment/. Is there something specific that you are looking for?"],
+            "recommendations":["No, thank you", "DIY Assessment", "Ilantus Expert Assessment"]
+        },
+        {
+            "tag": "Done",
+            "patterns": ["No", "No, thank you", "I am all set"],
+            "responses":["Amazing! It was a pleasure to talk to you. Please let me know if there is anything I can assist you in."],
+            "recommendations":["I am all set", "I have more questions"]
+        },
+        {
+            "tag": "DIY Assessment",
+            "patterns": ["DIY Assessment", "do assessment on your own", "assess security needs"],
+            "responses":["Identity and Access Management is an integral part of today’s cybersecurity. This assessment will help you analyze your security with IAM with a few simple questions and you can do it all by yourself. It comprises questions based on your current Identity and Access Management posture. Please go to https://www.ilantus.com/iam-assessment/diy/ tp fill out the assessment."],
+            "recommendations":["I am all set", "I have more questions"]
+        },
+        {
+            "tag": "Expert Assessment",
+            "patterns": ["expert assessment", "talk to expert for security needs", "what is expert assessment"],
+            "responses":["To get a complete end-to-end assessment of you Identity and Access Management posture, learn about how you can talk to an expert at https://www.ilantus.com/iam-assessment/ilantus-expert/"],
+            "recommendations":["I am all set", "I have more questions"]
+        },
+        {
+            "tag": "more questions",
+            "patterns": ["I have more questions", "more questions"],
+            "responses":["How can I help you?"],
+            "recommendations":[]
+        },
+        {
+            "tag": "Contact Sales",
+            "patterns":["I would like to contact sales", "I want to contact sales", "I want to talk to sales", "Contact Sales", "Contact Sales for more information"],
+            "responses":["Of course! Would you like to talk to sales now or schedule a meeting?"],
+            "recommendations":["Talk to Sales now", "Schedule a meeting"]
+        },
+        {
+            "tag": "Product Single Sign-on",
+            "patterns": ["Single Sign-on"],
+            "responses":["For Identity and Access Management, you can secure single sign-on to cloud and thick client apps. Learn more at https://www.ilantus.com/products/single-sign-on/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product Universal Directory",
+            "patterns": ["Universal Directory"],
+            "responses":["As a universal directory, you can create just one directory for all your users and devices to improve productivity and curb helpdesk costs. Learn more at https://www.ilantus.com/products/universal-directory/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product Password Management",
+            "patterns": ["Password Management"],
+            "responses":["As an enterprise class, you can use automated Password Management to improve productivity and curb helpdesk costs. Learn more at https://www.ilantus.com/products/password-management/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product Web Access Management",
+            "patterns": ["Web Access Management"],
+            "responses":["Using Wev Access Management, you can securely access resources without a VPN. Learn more at https://www.ilantus.com/products/secure-web-access-management/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product User Lifecycle Management",
+            "patterns": ["User Lifecycle Management"],
+            "responses":["In User Lifecycle Management, you can automate provisioning and deprovisioning for all your users across their employment lifecycle. For more information, go to https://www.ilantus.com/products/user-lifecycle-management/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product Adaptive Multifactor Authentication", 
+            "patterns": ["Adaptive Multifactor Authentication"],
+            "responses":["Take advantage of multifactor authentication to safegaurd your accounts against credential theft and fraud. Learn more about Multifactor Authentication at https://www.ilantus.com/products/adaptive-multifactor-authentication/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product Segragation of Duties",
+            "patterns": ["Segragation of Duties"],
+            "responses":["Secure you organization against toxic combinations with fine-grained Segragation of Duties. Learn more at https://www.ilantus.com/products/segregation-of-duties/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product Access Request",
+            "patterns": ["Access Request"],
+            "responses":["With access request, you can implement multilevel approval workflows with automated provisioning and de-provisioning. Learn more at https://www.ilantus.com/products/access-request/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Product Access Recertification",
+            "patterns": ["Access Recertification"],
+            "responses":["With access recertification, you can improve security and comply with regulations and policies with automated recertification campaigns. Learn more at https://www.ilantus.com/products/access-recertification/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Contact Sales Now",
+            "patterns": ["Talk to Sales now"],
+            "responses":["TBD"],
+            "recommendations":[]
+        },
+        {
+            "tag": "Schedule a Meeting",
+            "patterns": ["Schedule a meeting"],
+            "responses":["TBD"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Solution Banking and Financial Services",
+            "patterns": ["Banking and Financial Services", "Bank", "Finance", "Insurance"],
+            "responses":["The domain of BFSI – Banking, Financial Services, and Insurance, are all high stakes industries when it comes to user data. The BFSI industry houses sensitive PII of users, along with crucial financial data that needs to be secure. To learn more about how Ilantus can fulfill your needs, go to https://www.ilantus.com/solutions/identity-management-for-bfsi/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Solution Healthcare", 
+            "patterns": ["Healthcare", "Health", "Hospital", "Medical"],
+            "responses":["Healthcare organizations have struggled with compliance due to cumbersome processes. The one answer to stay compliant without compromising on patient care, security, and privacy and efficiency is Identity and Access Management that is done smartly. To learn more go to https://www.ilantus.com/solutions/identity-management-for-healthcare/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Solution Education", 
+            "patterns": ["Education"],
+            "responses":["Schools and universities have Personally Identifiable Information (PII), healthcare, and financial data of students, their guardians, and faculty and this information needs to be protected for cyberattacks. To learn more about how Ilantus can fulfill your needs, go to https://www.ilantus.com/solutions/identity-management-for-education/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Solution Manufacturing", 
+            "patterns": ["Manufacturing", "Manufacture", "Productivity"],
+            "responses":["The manufacturing industry is among the most fast-paced industries. They are continuously on the regular timeline of fulfilling orders. Off late, manufacturing industries have also adapted several new technologies to keep up with the changing times. But, it is important to note, several of these changes can seem unprepared in today’s business landscape. One mistake and breach in one of the manufacturing plants can affect the entire enterprise and end up them losing customers. Find out how Ilantus can help you at https://www.ilantus.com/solutions/identity-management-for-manufacturing/"],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Solution Telecommunications", 
+            "patterns": ["telecommunications", "marketing"],
+            "responses": [""],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        },
+        {
+            "tag": "Solution Retail",
+            "patterns": ["Retail"],
+            "responses": [""],
+            "recommendations":["I am all set", "I have more questions", "Contact sales for more information"]
+        }
+        
+    ]
 }
