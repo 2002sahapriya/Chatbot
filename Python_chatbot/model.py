@@ -18,8 +18,3 @@ class NeuralNet(nn.Module):
 
         #no activation and n no softmax
         return out
-
-    
-
-
-
