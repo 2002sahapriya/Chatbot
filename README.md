@@ -1,2 +1,2 @@
 # Chatbot
-A simple AI Chatbot for ilantus @ www.ilantus.com
+A simple AI Chatbot!
